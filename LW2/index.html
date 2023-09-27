@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>АРМ Отдела технического надзора</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    </head>
+    <body>
+        <div class="header-container">
+            <h1 style='text-align: center;'><a>АРМ Отдела технического надзора</a><h1></h1>
+             
+        </div>
+             <div class="menu-container">
+            <h2 style='text-align: center;padding-top: 10px;'><a>Меню для быстрой маршрутизации сотрудника</a></h2>
+            <hr>
+             <h2 style='text-align: center;'><a href='article.html' style='text-decoration: underline;color:black;'>Описание отдела</a></h2>
+             <h2 style='text-align: center;'><a onclick='errors()'>Новости и обновления</a></h2>
+             <h2 style='text-align: center;'><a onclick='errors()'>Задачи и функции</a></h2>
+             <hr>
+             <h2 style='text-align: center;'><a onclick='errors()'>Список объектов с информацией о текущем состоянии</a></h2>
+             <h2 style='text-align: center;'><a onclick='errors()'>Планы и графики проверок</a></h2>
+             <h2 style='text-align: center;'><a onclick='errors()'>Документы и запросы</a></h2> 
+             <hr>        
+            </div>
+            <div class="support-link">
+            <h2 style='text-align: center;'><a onclick='alerts()' style='text-decoration: underline;'>Служба технической поддержки</a></h2>
+            </div>
+            <script>
+                function alerts() {
+                    alert('Техническая поддержка в данный момент не работает!');
+                } 
+                function errors() {
+                    alert('Данный раздел находится в разработке');
+                }
+                </script>
+    </body>
+</html>
