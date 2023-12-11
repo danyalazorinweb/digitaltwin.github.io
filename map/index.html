@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Мелентьева А.В.</title>
+</head>
+<body>
+    <section id="preview" class="preview section-margin-b-m">
+        <h2 style="text-align: center;">Прототип карты мира с природными зонами (Мелентьева А.В.)</h2>
+        <div class="preview__content">
+          <div id='map-container'></div>
+          <link href="map.css" rel="stylesheet">
+          <script src="raphael.min.js"></script>
+          <script src="settings.js"></script>
+          <script src="paths.js"></script>
+          <script src="map.js"></script>
+          <script>
+          map_cfg.mapWidth = 0;
+          var map = new FlaMap(map_cfg);
+          map.drawOnDomReady('map-container');
+          document.addEventListener('DOMContentLoaded', function() {
+    var watermarkElement = document.querySelector('path[fill="#999999"]');
+    
+    if (watermarkElement) {
+        watermarkElement.remove();
+    } else {
+        console.log('Элемент с водяным знаком не найден.');
+    }
+});
+          </script>
+        </div>
+      </section>
+</body>
+</html>
