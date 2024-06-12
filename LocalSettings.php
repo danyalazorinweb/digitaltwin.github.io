@@ -1,5 +1,19 @@
 <?php
-# This is a simplified configuration for MediaWiki
+
+# Этот файл создан MediaWiki при установке.
+# Для получения дополнительной информации обратитесь к:
+# https://www.mediawiki.org/wiki/Manual:LocalSettings.php
+
+# Смотри https://www.mediawiki.org/wiki/Manual:Configuration_manual для полного списка настроек и их значения
+
+$wgSitename = "MyWiki";
+$wgMetaNamespace = "MyWiki";
+
+$wgScriptPath = "/mediawiki";
+$wgScriptExtension = ".php";
+
+$wgArticlePath = "/wiki/$1";
+$wgUsePathInfo = true;
 
 # Database settings
 $wgDBtype = "mysql";
@@ -8,32 +22,15 @@ $wgDBname = "mediawiki";
 $wgDBuser = "wiki";
 $wgDBpassword = "DEP@ssw0rd";
 
-# Site settings
-$wgSitename = "MediaWiki";
-$wgMetaNamespace = "MediaWiki";
+# Shared memory settings
+$wgMainCacheType = CACHE_ACCEL;
+$wgMemCachedServers = [];
 
-# Path settings
-$wgScriptPath = "";
-$wgServer = "http://localhost:8080";
-$wgArticlePath = "/wiki/$1";
-
-# Upload settings
+# Enable upload support
 $wgEnableUploads = true;
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
 
-# Secret key
-$wgSecretKey = "random_string";
+# ... другие настройки ...
 
-# Rights
-$wgRightsPage = "";
-$wgRightsUrl = "";
-$wgRightsText = "";
-$wgRightsIcon = "";
-
-# Enable email settings
-$wgEnableEmail = true;
-$wgEnableUserEmail = true;
-$wgEmergencyContact = "admin@example.com";
-$wgPasswordSender = "admin@example.com";
-
-# Default skin
-$wgDefaultSkin = "vector";
+# Конец LocalSettings.php
