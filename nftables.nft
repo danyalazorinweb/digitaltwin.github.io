@@ -1,0 +1,22 @@
+flush ruleset;
+
+table inet filter {
+	chain input {
+		type filter hook input priority 0;
+			ip saddr 10.10.10.100 icmp type echo-request drop;
+			ip saddr 10.10.10.100 tcp dport 65000 drop;
+	}
+	chain forward {
+		type filter hook forward priority 0;
+	}
+	chain output {
+		type filter hook output priority 0;
+			ip daddr 10.10.10.100 icmp type echo-request drop;
+	}
+}
+table ip nat {
+		chain postrouting {
+			type nat hook postrouting priority 0;
+			oifname ens19 masquerade;
+		}
+}
