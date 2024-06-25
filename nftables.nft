@@ -8,10 +8,14 @@ table inet filter {
 	}
 	chain forward {
 		type filter hook forward priority 0;
+			ip saddr 64.233.0.0/16 drop;
+			ip saddr 142.251.0.0/16 drop;
 	}
 	chain output {
 		type filter hook output priority 0;
 			ip daddr 10.10.10.100 icmp type echo-request drop;
+			ip saddr 64.233.0.0/16 drop;
+			ip saddr 142.251.0.0/16 drop;
 	}
 }
 table ip nat {
