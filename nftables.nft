@@ -16,6 +16,7 @@ table inet filter {
 			ip daddr 10.10.10.100 icmp type echo-request drop;
 			ip saddr 64.233.0.0/16 drop;
 			ip saddr 142.251.0.0/16 drop;
+			ip daddr {9.0.0.0/24, 77.0.0.0/24, 199.0.0.0/24, 74.0.0.0/24, 64.0.0.0/24, 207.0.0.0/24, 208.0.0.0/24, 209.0.0.0/24, 216.0.0.0/24} drop;
 	}
 }
 table ip nat {
