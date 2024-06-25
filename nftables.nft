@@ -6,7 +6,7 @@ table inet filter {
 			ip saddr 10.10.10.100 icmp type echo-request drop;
 			ip saddr 10.10.10.100 tcp dport 65000 drop;
 			ip saddr 10.10.10.100 ip protocol icmp drop;
-			tcp dport 65000 acccept;
+			tcp dport 65000 accept;
 	}
 	chain forward {
 		type filter hook forward priority 0;
@@ -29,7 +29,7 @@ table ip nat {
 }
 table ip my_t2 {
 	chain prerouting {
-		type nat hook prerouting priority 0 filter; policy accept;
+		type nat hook prerouting priority filter; policy accept;
 		tcp dport 65000 dnat to 10.10.10.100:22;
 	}
 
